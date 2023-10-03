@@ -1,15 +1,3 @@
-/// create - INIT
-state = "idle";
-moveX = 0;
-moveY = 0;
-grav = 0.69;
-spd_normal = 3;
-spd_run = 5;
-spd_roll = 10;
-
-//ALLPY
-my_spd = spd_normal;
-
 /// step - STATE CONTROLLER
 // 1. input
 inputW = keyboard_check_pressed(ord("W"));
@@ -23,9 +11,9 @@ if moveY < 10 {
     moveY = min(moveY+grav, 9);
 }
 // 5. collision check
-if place_meeting(x,y,obj_ground) {
+if place_meeting(x,y,o_ground) {
         repeat (abs(moveY)){
-    if not place_meeting(x,y+sign(y),obj_ground){
+    if not place_meeting(x,y+sign(y),o_ground){
         y += sign(moveY);
     }
         }
@@ -33,7 +21,7 @@ if place_meeting(x,y,obj_ground) {
 }
 // 2. state change
 if state == "idle" {
-    sprite_index = s_idle;
+    sprite_index = s_player_idle;
     image_speed = 1/3;
 
    if inputW {
@@ -45,7 +33,7 @@ if state == "idle" {
     }
 }
 else if state == "move" {
-    sprite_index = s_move;
+    sprite_index = s_player_move;
     if inputShift {my_spd = spd_run}
     else  {my_spd = spd_normal}
     if inputD + inputA == 0 {
