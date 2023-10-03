@@ -20,4 +20,4 @@ else:
     print("không đúng")
 print(f'chúc mừng bạn đã hoàn thành, điểm của bạn là {score} trên 3')
 
-
+# ?????????????
