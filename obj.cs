@@ -39,8 +39,6 @@ if state == "idle" {
 }
 else if state == "move" {
     sprite_index = s_player_move;
-    if inputShift {my_spd = spd_run}
-    else  {my_spd = spd_normal}
     if inputD + inputA == 0 {
         state = "idle";
     } 
