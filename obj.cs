@@ -1,10 +1,24 @@
+/// create - INIT
+state = "idle";
+moveX = 0;
+moveY = 0;
+grav = 0.69;
+spd_normal = 3;
+spd_run = 5;
+spd_roll = 10;
+
+//ALLPY
+my_spd = spd_normal;
+
 /// step - STATE CONTROLLER
 // 1. input
 inputW = keyboard_check_pressed(ord("W"));
 inputA = keyboard_check(ord("A"));
 inputS = keyboard_check_pressed(ord("S"));
 inputD = keyboard_check(ord("D"));
-inputShift = keyboard_check_pressed(vk_shift);
+inputShift = keyboard_check(vk_shift);
+inputRelS = keyboard_check_released(ord("S"));
+inputSpace = keyboard_check_pressed(vk_space);
 
 // 4. Physics
 if moveY < 10 {
@@ -31,16 +45,32 @@ if state == "idle" {
     if inputA or inputD{
         state = "move";
     }
+    if inputS {
+        state = "crouch";
+    }
 }
 else if state == "move" {
     sprite_index = s_player_move;
     if inputShift {my_spd = spd_run}
     else  {my_spd = spd_normal}
     if inputD + inputA == 0 {
-        state = "idle"
+        state = "idle";
     } 
     moveX = (inputD - inputA) * my_spd;
 }
+else if state = "crouch" {
+    sprite_index = s_crouch;
+    if inputRelS {
+        state = "idle";
+    }
+}
 // 3. Apply
 y += moveY;
-x += moveX
+x += moveX;
+
+/// Sprite Controller
+if moveX < 0 {
+    image_xscale = -1;
+} else if moveX > 0 {
+    image_xscale = 1;
+}

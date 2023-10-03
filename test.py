@@ -7,7 +7,7 @@ if input_str.isdigit():
     else:
         print("Số bạn nhập là số lẻ")
 else:
-    print("Đây không phải là một số nguyên.")
+    print("Đây không phải là mộ`t số nguyên.")
 
 input_str = input('hãy nhập số vào đây để tôi kiểm tra chẵn lẻ: ')
 
@@ -19,3 +19,9 @@ if input_str.isdigit():
         print("Số bạn nhập là số lẻ")
 else:
     print("Đây không phải là một số nguyên.")
+
+
+
+
+
+
