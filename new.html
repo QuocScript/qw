@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1 id="header"></h1>
+  <input id ="test" >
+  <button onclick="alo()">INPUT</button>
+  <script>
+    function alo() {
+      let test = document.getElementById("test").value
+        localStorage.setItem("ten", test)
+        let h1 = document.getElementById("header")
+        h1.textContent = localStorage.getItem("ten")
+}
+  </script>
+</body>
+
+</html>

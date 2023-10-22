@@ -1,27 +1,27 @@
-input_str = int(input('hãy nhập số vào đây để tôi kiểm tra chẵn lẻ: '))
+# password = "12345"
+# user_password = str(input("Hãy nhập mật khẩu vào đây: "))
 
-if input_str.isdigit():
-    num = int(input_str)
-    if num % 2 == 0:
-        print("Số bạn nhập là số chẵn")
-    else:
-        print("Số bạn nhập là số lẻ")
-else:
-    print("Đây không phải là mộ`t số nguyên.")
+# while password != user_password :
+#     print("sai mật khẩu")
+#     user_password = str(input("Hãy nhập mật khẩu vào đây: "))
+# print("đã nhập đúng mật khẩu")
 
-input_str = input('hãy nhập số vào đây để tôi kiểm tra chẵn lẻ: ')
+# i = int(input("hay nhap so be hon 6"))
+# while i < 6 :
+#     print(i)
+#     i+=1
 
-if input_str.isdigit():
-    num = int(input_str)
-    if num % 2 == 0:
-        print("Số bạn nhập là số chẵn")
-    else:
-        print("Số bạn nhập là số lẻ")
-else:
-    print("Đây không phải là một số nguyên.")
+# for x in range (i,6) :
+#     print(x)
 
+# x = int(input("Nhập vào tỷ lệ phần trăm: "))
 
-
-
-
-
+# while x < 0 or x > 100 :
+#     print("dữ liệu không hợp lệ, vui lòng nhập lại")
+#     x = int(input("Nhập vào tỷ lệ phần trăm: "))
+# print("dữ liệu hợp lệ")
+i = int(input("???"))
+sum = 0
+for i in range(1 ,i):
+    sum += i
+    print(f"tong cac so tu 0 den {i} la : {sum}") 
